@@ -221,6 +221,33 @@ body {
   width: 80px;
 }
 
+
+/* Grid style: show cell borders and optionally hide columns beyond header */
+.grades-table.grid-hide-extras,
+.grades-table.grid-hide-extras th,
+.grades-table.grid-hide-extras td {
+  border: 1px solid #e6e6e6;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+.grades-table.grid-hide-extras th,
+.grades-table.grid-hide-extras td {
+  padding: 8px 10px;
+  background-clip: padding-box;
+}
+
+/* Hide any extra data columns (columns after the 14th) */
+.grades-table.grid-hide-extras th:nth-child(n+15),
+.grades-table.grid-hide-extras td:nth-child(n+15) {
+  display: none;
+}
+
+/* Make sure the header row separators look consistent */
+.grades-table.grid-hide-extras thead th {
+  background: #fafafa;
+}
+
 .grades-table tbody tr:nth-child(odd) td {
   background: #fff;
 }
@@ -344,7 +371,7 @@ body {
   }
 
   .filter-right .btn-query {
-    padding: 2px 8px; 
+    padding: 2px 8px;
     font-size: 14px;
   }
 
@@ -353,8 +380,8 @@ body {
     font-size: 12px;
     text-align: center;
     display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+    justify-content: space-between;
+    flex-direction: column;
   }
 
   /* table container: allow horizontal scroll and reduce height on mobile */
