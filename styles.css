@@ -1,0 +1,390 @@
+/* Basic page layout */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, "Microsoft Yahei", sans-serif;
+  background: #f3f3f3;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}
+
+.app-header {
+  background: #0d87cf;
+  color: #fff;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.06);
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 18px;
+  padding-left: 110px;
+  font-weight: 600;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.panel-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.panel-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 6px;
+  border: 1px solid #f0f0f0;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.filter-left label {
+  margin-right: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.filter-left input[type="text"],
+.filter-left select {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  min-width: 120px;
+}
+
+.filter-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-export {
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-query {
+  background: rgb(51, 122, 183);
+  color: #fff;
+  padding: 2px 8px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.note {
+  background: rgb(244, 244, 244);
+  color: #a94442;
+  padding: 12px 14px;
+  border-radius: 2px;
+  border: 1px solid rgb(244, 244, 244);
+  margin: 12px 0;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-wrap {
+  overflow: auto;
+  border-top: 1px solid #e9e9e9;
+  margin-top: 8px;
+
+}
+
+.grades-table {
+  width: 1600px;
+  /* wider to create horizontal scrolling like screenshot */
+  border-collapse: collapse;
+  min-width: 1200px;
+  font-size: 13px;
+}
+
+.grades-table thead th {
+  background: #fff;
+  color: #666;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.grades-table tbody td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.grades-table td:empty::before {
+  content: "\00a0";
+}
+
+/* When table is shown in a vertical/card layout, make the placeholder occupy vertical space */
+.grades-table.vertical td:empty::before {
+  display: block;
+  height: 18px;
+  line-height: 18px;
+}
+
+/* provide a small minimum height for all table cells so empty cells have vertical room */
+.grades-table td {
+  min-height: 20px;
+}
+
+.grades-table thead th:nth-child(1) {
+  width: 80px;
+}
+
+.grades-table thead th:nth-child(2) {
+  width: 50px;
+}
+
+.grades-table thead th:nth-child(3) {
+  width: 100px;
+}
+
+.grades-table thead th:nth-child(4) {
+  width: 240px;
+}
+
+.grades-table thead th:nth-child(5) {
+  width: 120px;
+}
+
+.grades-table thead th:nth-child(6) {
+  width: 50px;
+}
+
+.grades-table thead th:nth-child(7) {
+  width: 90px;
+}
+
+.grades-table thead th:nth-child(8) {
+  width: 60px;
+}
+
+.grades-table thead th:nth-child(9) {
+  width: 120px;
+}
+
+.grades-table thead th:nth-child(10) {
+  width: 90px;
+}
+
+.grades-table thead th:nth-child(11) {
+  width: 220px;
+}
+
+.grades-table thead th:nth-child(12) {
+  width: 80px;
+}
+
+.grades-table thead th:nth-child(13) {
+  width: 90px;
+}
+
+.grades-table thead th:nth-child(14) {
+  width: 80px;
+}
+
+.grades-table tbody tr:nth-child(odd) td {
+  background: #fff;
+}
+
+.grades-table tbody tr:nth-child(even) td {
+  background: #fbfbfb;
+}
+
+.grades-table tbody tr.fail td {
+  color: #c0392b;
+  font-weight: 600;
+}
+
+.grades-table tbody tr.blue td,
+.grades-table tbody tr.blue a {
+  color: #2a6fb7;
+  font-weight: 600;
+}
+
+.grades-table a.link {
+  color: #2a6fb7;
+  text-decoration: none;
+}
+
+.grades-table a.link:hover {
+  text-decoration: underline;
+}
+
+.pager {
+  padding: 12px 8px;
+  color: #666;
+  text-align: center;
+  border-top: 1px solid #eee;
+  margin-top: 8px;
+}
+
+.app-footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #9a9a9a;
+  font-size: 12px;
+  padding: 18px 0;
+}
+
+/* Small responsive tweaks */
+@media (max-width: 980px) {
+
+  .header-inner,
+  .page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .grades-table {
+    width: 1000px;
+  }
+}
+
+/* Mobile-specific styles: stack filters, full width inputs, smaller header */
+@media (max-width: 480px) {
+  .app-header {
+    height: 56px;
+  }
+
+  .header-inner {
+    padding-left: 16px;
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .page {
+    margin: 12px auto;
+    padding: 0 12px;
+  }
+
+  .panel {
+    padding: 12px;
+  }
+
+  .panel-top {
+    margin-bottom: 10px;
+  }
+
+  .btn-export {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .panel-filters {
+    display: block;
+    border: 1px solid #eee;
+    padding: 10px;
+  }
+
+  .filter-left,
+  .filter-right {
+    width: 100%;
+  }
+
+  .filter-left label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .filter-left input[type="text"],
+  .filter-left select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin-top: 6px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .filter-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6px;
+  }
+
+  .filter-right .btn-query {
+    padding: 2px 8px; 
+    font-size: 14px;
+  }
+
+  .note {
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  }
+
+  /* table container: allow horizontal scroll and reduce height on mobile */
+  .table-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-top: 1px solid #e9e9e9;
+    margin-top: 8px;
+    height: 200px;
+  }
+
+  /* keep table wide so it can scroll horizontally on small screens */
+  .grades-table {
+    width: 1200px;
+    min-width: 900px;
+    font-size: 13px;
+  }
+
+  .grades-table thead th,
+  .grades-table tbody td {
+    padding: 8px 10px;
+  }
+
+  .pager {
+    font-size: 13px;
+    padding: 8px 4px;
+  }
+
+  .app-footer {
+    font-size: 11px;
+    padding: 12px 0;
+  }
+}
