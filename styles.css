@@ -178,7 +178,7 @@ body {
 }
 
 .grades-table thead th:nth-child(4) {
-  width: 240px;
+  width: 100px;
 }
 
 .grades-table thead th:nth-child(5) {
@@ -206,7 +206,7 @@ body {
 }
 
 .grades-table thead th:nth-child(11) {
-  width: 220px;
+  width: 80px;
 }
 
 .grades-table thead th:nth-child(12) {
